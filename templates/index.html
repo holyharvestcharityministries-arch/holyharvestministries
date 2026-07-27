@@ -1,19 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
 <body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
-            </p>
-        </header>
-    </div>
-</body>
+    <main class="page">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Community stories • shared kindness</p>
+                <h1>Good news grows when neighbors show up.</h1>
+                <p>
+                    We celebrate the people making a difference and invite visitors to join in with time,
+                    skills, or encouragement.
+                </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#help">Offer help</a>
+                    <a class="button secondary" href="#stories">Read stories</a>
+                </div>
+            </div>
+        </section>
 
+        <section id="stories" class="section">
+            <h2>Recent bright spots</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Fresh food for families</h3>
+                    <p>Volunteers packed pantry boxes and delivered them to homes this week.</p>
+                </article>
+                <article class="card">
+                    <h3>Students found mentors</h3>
+                    <p>Local professionals offered homework support and career advice.</p>
+                </article>
+                <article class="card">
+                    <h3>Neighbors cleaned the park</h3>
+                    <p>A weekend crew brightened the playground and planted flowers together.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="help" class="section alt">
+            <h2>Ways to join the movement</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Share a story</h3>
+                    <p>Tell us about a kindness you saw so the whole community can celebrate it.</p>
+                </article>
+                <article class="card">
+                    <h3>Volunteer locally</h3>
+                    <p>Offer your time to support food drives, tutoring, or community events.</p>
+                </article>
+                <article class="card">
+                    <h3>Bring a skill</h3>
+                    <p>Help with mentoring, repairs, teaching, or organizing community projects.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>People ready to help</h2>
+            <ul class="help-list">
+                <li>Mentors for after-school support</li>
+                <li>Drivers for neighborhood deliveries</li>
+                <li>Gardeners for shared spaces</li>
+                <li>Organizers for weekend events</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Small acts of care can build a stronger neighborhood.</p>
+    </footer>
+</body>
 </html>
