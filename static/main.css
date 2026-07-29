@@ -304,10 +304,39 @@ img {
     gap: 16px;
 }
 
+.full-profile-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 12px 28px rgba(22, 49, 39, 0.08);
+}
+
+.full-profile-card h3 {
+    color: var(--primary-dark);
+    margin-top: 20px;
+}
+
+.full-list {
+    padding-left: 20px;
+    margin: 10px 0 0;
+}
+
+.ordered-list {
+    padding-left: 24px;
+}
+
 .footer {
     text-align: center;
     padding: 28px 16px 40px;
     color: var(--muted);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-quote {
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 12px;
 }
 
 @media (max-width: 860px) {
