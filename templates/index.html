@@ -7,78 +7,166 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 <body>
+    <header class="site-header">
+        <div class="top-banner">
+            <span>Faith-led support for children, widows, youth and families in Uganda</span>
+        </div>
+        <nav class="main-nav">
+            <a class="brand" href="#">Holy Harvest Charity Ministries</a>
+            <div class="nav-links">
+                <details class="nav-dropdown">
+                    <summary>About</summary>
+                    <div class="dropdown-menu">
+                        <a href="#about">Our story</a>
+                        <a href="#mission">Mission & vision</a>
+                    </div>
+                </details>
+                <details class="nav-dropdown">
+                    <summary>Programs</summary>
+                    <div class="dropdown-menu">
+                        <a href="#programs">Our work</a>
+                        <a href="#priorities">Strategic priorities</a>
+                    </div>
+                </details>
+                <details class="nav-dropdown">
+                    <summary>Get involved</summary>
+                    <div class="dropdown-menu">
+                        <a href="#donate">Donate</a>
+                        <a href="#contact">Contact us</a>
+                    </div>
+                </details>
+            </div>
+        </nav>
+    </header>
+
     <main class="page">
-        <section class="hero">
-            <div class="hero-content">
-                <p class="eyebrow">Community stories • shared kindness</p>
-                <h1>Good news grows when neighbors show up.</h1>
+        <section class="hero-panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Christian charity • Uganda</p>
+                <h1>Sowing seeds of hope, harvesting lives of joy.</h1>
                 <p>
-                    We celebrate the people making a difference and invite visitors to join in with time,
-                    skills, or encouragement.
+                    Holy Harvest Charity Ministries serves vulnerable children, widows, youth and families with compassionate programs rooted in faith, dignity and lasting impact.
                 </p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#help">Offer help</a>
-                    <a class="button accent" href="#donate">Donation</a>
-                    <a class="button secondary" href="#stories">Read stories</a>
+                    <a class="button primary" href="#donate">Donate now</a>
+                    <a class="button secondary" href="#programs">Explore our work</a>
                 </div>
+                <ul class="contact-strip">
+                    <li>Registration: 80034020405960</li>
+                    <li>WhatsApp: +256754199058</li>
+                </ul>
+            </div>
+            <div class="hero-media">
+                <img src="{{ url_for('static', filename='hh-ministries.png') }}" alt="Community members coming together to support families" />
             </div>
         </section>
 
-        <section id="stories" class="section">
-            <h2>Recent bright spots</h2>
+        <section id="about" class="intro-grid">
+            <article class="intro-card">
+                <p class="eyebrow">About us</p>
+                <h2>Bringing mercy, food, education and hope to underserved communities.</h2>
+                <p>
+                    Founded by Muwanguzi Gift Omar, Holy Harvest Charity Ministries is a faith-based, non-profit organization dedicated to restoring hope and transforming lives through food security, clean water, education, healthcare and community empowerment.
+                </p>
+                <a class="text-link" href="#mission">Read more about our mission</a>
+            </article>
+            <aside class="info-card">
+                <h3>Organization profile</h3>
+                <p><strong>Registration number:</strong> 80034020405960</p>
+                <p><strong>Official contacts:</strong> +256754199058</p>
+                <p><strong>Email:</strong> holyharvestcharityministries@gmail.com</p>
+            </aside>
+        </section>
+
+        <section id="programs" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Our work</p>
+                <h2>Programs that restore dignity and hope</h2>
+            </div>
             <div class="card-grid">
                 <article class="card">
-                    <h3>Fresh food for families</h3>
-                    <p>Volunteers packed pantry boxes and delivered them to homes this week.</p>
+                    <img src="{{ url_for('static', filename='programs.svg') }}" alt="Support for feeding and agriculture" />
+                    <div class="card-body">
+                        <h3>Child Feeding & Sustainable Agriculture</h3>
+                        <p>Providing nutritious meals and practical agricultural support for families facing hunger.</p>
+                        <a href="#donate">Read more</a>
+                    </div>
                 </article>
                 <article class="card">
-                    <h3>Students found mentors</h3>
-                    <p>Local professionals offered homework support and career advice.</p>
+                    <img src="{{ url_for('static', filename='water.svg') }}" alt="Clean water access illustration" />
+                    <div class="card-body">
+                        <h3>Clean Water & Sanitation</h3>
+                        <p>Supporting borehole projects and sanitation solutions that improve health and safety.</p>
+                        <a href="#priorities">Read more</a>
+                    </div>
                 </article>
                 <article class="card">
-                    <h3>Neighbors cleaned the park</h3>
-                    <p>A weekend crew brightened the playground and planted flowers together.</p>
+                    <img src="{{ url_for('static', filename='education.svg') }}" alt="Education and vocational empowerment illustration" />
+                    <div class="card-body">
+                        <h3>Education & Vocational Empowerment</h3>
+                        <p>Creating opportunities for children and youth to learn, grow and build sustainable futures.</p>
+                        <a href="#programs">Read more</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="{{ url_for('static', filename='partnership.svg') }}" alt="Partnership and volunteer illustration" />
+                    <div class="card-body">
+                        <h3>Volunteer & Mission Partnership</h3>
+                        <p>Uniting churches, businesses, and volunteers to strengthen communities and expand impact.</p>
+                        <a href="#contact">Read more</a>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section id="donate" class="section alt">
-            <h2>Support the mission</h2>
-            <p>If you would like to contribute financially or share resources, please reach out through the contact form or by emailing our volunteer team.</p>
-            <a class="button primary" href="mailto:community@helpinghands.org">Contact to donate</a>
+        <section id="mission" class="split-section">
+            <article class="panel">
+                <p class="eyebrow">Mission & vision</p>
+                <h2>To see vulnerable families living in hope, dignity and self-reliance.</h2>
+                <p>
+                    Our mission is to demonstrate God’s love by providing compassionate care, education, food security, healthcare and livelihood opportunities that empower vulnerable children and families to thrive.
+                </p>
+            </article>
+            <article class="panel accent">
+                <p class="eyebrow">Why partner with us?</p>
+                <h2>Your partnership provides food, water, learning and lasting hope.</h2>
+                <ul class="list-checks">
+                    <li>Nutritious meals for hungry children</li>
+                    <li>Clean drinking water and sanitation</li>
+                    <li>Educational and vocational opportunities</li>
+                    <li>Support for widows and vulnerable families</li>
+                </ul>
+            </article>
         </section>
 
-        <section id="help" class="section">
-            <h2>Ways to join the movement</h2>
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Share a story</h3>
-                    <p>Tell us about a kindness you saw so the whole community can celebrate it.</p>
-                </article>
-                <article class="card">
-                    <h3>Volunteer locally</h3>
-                    <p>Offer your time to support food drives, tutoring, or community events.</p>
-                </article>
-                <article class="card">
-                    <h3>Bring a skill</h3>
-                    <p>Help with mentoring, repairs, teaching, or organizing community projects.</p>
-                </article>
+        <section id="priorities" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Strategic priorities</p>
+                <h2>What we are building together</h2>
+            </div>
+            <div class="priority-list">
+                <div>Acquire land for a permanent ministry center</div>
+                <div>Promote food security through feeding and agriculture</div>
+                <div>Provide clean and safe water through borehole projects</div>
+                <div>Expand child sponsorship and education opportunities</div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>People ready to help</h2>
-            <ul class="help-list">
-                <li>Mentors for after-school support</li>
-                <li>Drivers for neighborhood deliveries</li>
-                <li>Gardeners for shared spaces</li>
-                <li>Organizers for weekend events</li>
-            </ul>
+        <section id="donate" class="donation-card">
+            <div>
+                <p class="eyebrow">Make a lasting difference</p>
+                <h2>Support a child, fund a borehole, or help us reach more families.</h2>
+                <p>Every gift plants a seed of food, faith and a future.</p>
+            </div>
+            <a class="button primary" href="mailto:holyharvestcharityministries@gmail.com">Donate today</a>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>Small acts of care can build a stronger neighborhood.</p>
+    <footer id="contact" class="footer">
+        <p><strong>Holy Harvest Charity Ministries</strong></p>
+        <p>Instagram: holyharvestcharityministriesug</p>
+        <p>Facebook: holy harvest charity ministries Uganda</p>
+        <p>WhatsApp: +256754199058</p>
     </footer>
 </body>
 </html>
