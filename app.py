@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 import threading
 import requests
@@ -15,6 +15,20 @@ if dev_marker_file.exists():
 
 
 app = Flask(__name__)
+
+PHOTO_DIR = Path(__file__).resolve().parent / "static" / "photos"
+
+
+def build_photo_list():
+    photos = []
+    if PHOTO_DIR.exists():
+        for path in sorted(PHOTO_DIR.iterdir()):
+            if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg"}:
+                filename = path.name
+                label = filename.rsplit(".", 1)[0].replace("-", " ").replace("_", " ").strip()
+                photos.append({"filename": filename, "label": label})
+    return photos
+
 
 def keep_alive():
     # Wait for the server to start
@@ -43,4 +57,10 @@ def health():
 
 @app.route("/")
 def index():
-    return render_template("index.html", title="Holy Harvest Charity Ministries")
+    photos = build_photo_list()
+    return render_template("index.html", title="Holy Harvest Charity Ministries", photos=photos)
+
+
+@app.route("/photos/<path:filename>")
+def serve_photo(filename):
+    return send_from_directory(PHOTO_DIR, filename)

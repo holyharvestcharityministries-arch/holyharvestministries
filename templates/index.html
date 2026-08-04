@@ -197,6 +197,26 @@
            
 
 
+        <section class="section" id="photo-gallery">
+            <div class="section-heading">
+                <p class="eyebrow">Photo gallery</p>
+                <h2>Moments from our work and community care</h2>
+            </div>
+            <div class="photo-gallery">
+                {% for photo in photos %}
+                <figure class="photo-card">
+                    <img src="{{ url_for('serve_photo', filename=photo.filename) }}" alt="{{ photo.label }}" data-full="{{ url_for('serve_photo', filename=photo.filename) }}" />
+                    <figcaption class="photo-caption">{{ photo.label }}</figcaption>
+                </figure>
+                {% endfor %}
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" aria-hidden="true">
+            <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+            <img id="lightbox-image" src="" alt="Enlarged photo" />
+        </div>
+
         <section id="donate" class="donation-card">
             <div>
                 <p class="eyebrow">Make a lasting difference</p>
@@ -237,6 +257,39 @@
                     dropdown.open = false;
                 });
             });
+        });
+
+        const galleryImages = document.querySelectorAll('.photo-card img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeButton = document.querySelector('.lightbox-close');
+
+        galleryImages.forEach((image) => {
+            image.addEventListener('click', () => {
+                lightboxImage.src = image.dataset.full;
+                lightboxImage.alt = image.alt;
+                lightbox.classList.add('open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImage.src = '';
+        };
+
+        closeButton.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
         });
     </script>
 </body>
